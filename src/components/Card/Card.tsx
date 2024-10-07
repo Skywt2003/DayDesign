@@ -4,7 +4,10 @@ import "./Card.scss";
 export interface CardProps extends React.HTMLAttributes<HTMLDivElement> {}
 
 const Card = (props: CardProps) => (
-  <div className="card" {...props}>
+  <div
+    {...props}
+    className={props.className ? "card " + props.className : "card"}
+  >
     {props.children}
   </div>
 );

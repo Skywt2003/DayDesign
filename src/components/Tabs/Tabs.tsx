@@ -10,7 +10,10 @@ export interface TabsProps extends React.HTMLAttributes<HTMLElement> {
 const Tabs = (props: TabsProps) => {
   const [selectedTab, setSelectedTab] = useState(props.defaultSelected ?? 0);
   return (
-    <div className="tabs">
+    <div
+      {...props}
+      className={props.className ? "tabs " + props.className : "tabs"}
+    >
       {props.tabs.map((tab, index) => (
         <div
           key={index}

@@ -27,7 +27,7 @@ const Navbar = (props: NavbarProps) => {
       ref={componentRef}
       {...props}
     >
-      <div className="navbar__content">{props.children}</div>
+      {props.children}
     </nav>
   );
 };

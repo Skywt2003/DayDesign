@@ -5,7 +5,10 @@ export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {}
 
 const Button = (props: ButtonProps) => (
-  <button className="button" {...props}>
+  <button
+    {...props}
+    className={props.className ? "button " + props.className : "button"}
+  >
     {props.children}
   </button>
 );

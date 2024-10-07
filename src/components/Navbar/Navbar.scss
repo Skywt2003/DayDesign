@@ -13,8 +13,4 @@
     @apply bg-opacity-50 dark:bg-opacity-50;
     @apply shadow-lg;
   }
-  &__content {
-    @extend .container, .container--wide;
-    @apply flex justify-center sm:justify-between flex-wrap;
-  }
 }
