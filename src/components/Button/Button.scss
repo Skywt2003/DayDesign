@@ -1,0 +1,25 @@
+@import "../../styles/global.scss";
+
+.button {
+  @apply p-2 rounded-xl transition-all;
+  @include bg-front;
+
+  @apply shadow-md;
+  @include shadow-front;
+
+  &:hover {
+    @include hover-front;
+    @apply shadow-none;
+  }
+  &:active {
+    @apply shadow-none;
+    @include active-front;
+    transform: scale(0.98);
+  }
+  &:disabled {
+    @apply shadow-none border;
+    @include border-back;
+    @include bg-back; // 待修改
+    @include text-tertiary;
+  }
+}

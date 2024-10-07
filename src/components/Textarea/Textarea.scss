@@ -1,0 +1,14 @@
+@import "../../styles/global.scss";
+
+.textarea {
+  @apply p-2 rounded-xl transition-all;
+  @include bg-back;
+
+  @apply border outline-0;
+  @include border-back;
+
+  @apply shadow-inner;
+  @include shadow-front;
+
+  @include text-primary;
+}

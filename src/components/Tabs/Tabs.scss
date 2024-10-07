@@ -1,0 +1,21 @@
+@import "../../styles/global.scss";
+
+.tabs {
+  @apply flex w-full;
+  &__tab {
+    @apply flex-1 text-center cursor-pointer;
+    @apply p-2 rounded-xl transition-all;
+    &:hover {
+      @include hover-front;
+    }
+    &--active {
+      @include bg-front;
+      @apply shadow-md;
+      @include shadow-front;
+      &:hover {
+        @include bg-front;
+        @apply cursor-default;
+      }
+    }
+  }
+}

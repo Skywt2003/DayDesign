@@ -1,0 +1,177 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "../styles//mixins.scss";
+
+.text-primary {
+  @include text-primary;
+}
+
+.text-secondary {
+  @include text-secondary;
+}
+
+.text-tertiary {
+  @include text-tertiary;
+}
+
+.font-kai {
+  @include font-kai;
+}
+
+:root {
+  @apply font-serif;
+  font-family: "Noto Serif SC", serif;
+  font-size: 16px;
+  @screen sm {
+    font-size: 16px;
+  }
+  @screen md {
+    font-size: 17px;
+  }
+  @screen lg {
+    font-size: 18px;
+  }
+}
+
+html {
+  @include bg-back;
+  @apply scroll-smooth;
+}
+
+.container {
+  @apply mx-auto px-4;
+
+  @apply max-w-md;
+  @screen sm {
+    @apply max-w-lg;
+  }
+  @screen md {
+    @apply max-w-xl;
+  }
+  @screen lg {
+    @apply max-w-2xl;
+  }
+  @screen xl {
+    @apply max-w-3xl;
+  }
+
+  &--wide {
+    @apply max-w-lg;
+    @screen sm {
+      @apply max-w-xl;
+    }
+    @screen md {
+      @apply max-w-2xl;
+    }
+    @screen lg {
+      @apply max-w-3xl;
+    }
+    @screen xl {
+      @apply max-w-5xl;
+    }
+  }
+}
+
+.link {
+  @apply transition-all cursor-pointer;
+  @apply underline decoration-transparent;
+  &--with-underline {
+    @apply decoration-inherit;
+  }
+  &:hover {
+    @apply decoration-inherit;
+  }
+}
+
+/* 页面主标题 */
+h1 {
+  @apply text-5xl font-black leading-tight drop-shadow-xl;
+}
+
+/* 分节标题 */
+h2 {
+  @apply text-4xl font-black leading-snug drop-shadow-xl;
+}
+
+/* 展示信息 */
+h3 {
+  @apply text-3xl font-bold leading-snug drop-shadow-lg;
+}
+
+h4 {
+  @apply text-xl font-bold leading-snug;
+}
+
+h5 {
+  @apply text-lg font-bold leading-snug;
+}
+
+hr {
+  @include border-back;
+}
+
+header,
+nav,
+main,
+footer {
+  @include text-primary;
+}
+
+// 应用 typography 的样式，并进行一些微调
+.content {
+  @apply prose dark:prose-neutral dark:prose-invert max-w-none;
+  img {
+    @apply shadow-lg rounded-lg;
+    @apply max-h-[600px];
+  }
+  blockquote {
+    @apply not-italic;
+    @include font-kai;
+    strong,
+    b {
+      @apply font-bold;
+    }
+    :before,
+    :after {
+      content: "";
+    }
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply relative;
+  }
+
+  &__heading-anchor {
+    @apply absolute;
+    @apply -top-20;
+  }
+
+  // typography 默认将所有 a 都加上下划线
+  // 虽然这可以很好地提示用户超链接，但是：
+  // 1）当应用于标题时不美观
+  // 2）当应用于大量超链接列表时，无必要（因为用户已知道都是超链接）
+  // 所以添加此属性，消除默认下划线，改为 hover 下划线
+  &__link {
+    &--no-underline-by-default {
+      @apply decoration-transparent hover:decoration-inherit transition-all;
+    }
+  }
+}
+
+.summary {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply text-lg mt-0;
+  }
+}

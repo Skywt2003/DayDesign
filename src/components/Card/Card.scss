@@ -1,0 +1,44 @@
+@import "../../styles/global.scss";
+
+.card {
+  @include bg-front;
+
+  @apply rounded-xl p-4;
+
+  @apply shadow-md;
+  // 注意：apply shadow-md 时，Tailwind 设置了默认的颜色
+  // 诸如 shadow-gray-200 这样的 util 通过变量覆盖上述颜色
+  // 但是，如果使用 extend，则被 extend 的变量反而会被覆盖（优先级更低）
+  // 所以，不要使用 extend，全部使用 mixin / include
+  @include shadow-front;
+
+  // 在一段文字中插入信息的 card 组件
+  &--in-content {
+    @apply p-2 leading-relaxed;
+  }
+
+  // 专门用于 Bento 的 card 组件
+  &--bento {
+    @apply flex flex-col justify-center relative;
+    @apply rounded-2xl;
+  }
+  &--align-center {
+    @apply items-center;
+  }
+  &--with-image {
+    @apply bg-center bg-cover bg-no-repeat bg-blend-overlay text-white;
+    background-color: rgb(100, 100, 100);
+  }
+
+  &--clickable {
+    @apply cursor-pointer transition-all;
+    &:hover {
+      @include hover-front;
+    }
+    &:active {
+      @apply shadow-none;
+      @include active-front;
+      transform: scale(0.98);
+    }
+  }
+}
