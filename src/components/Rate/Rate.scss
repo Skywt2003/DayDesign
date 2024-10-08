@@ -1,0 +1,9 @@
+.rate {
+  @apply inline-flex p-2;
+  &__star {
+    @apply px-1 w-6 h-6;
+    &--active {
+      @apply text-yellow-500;
+    }
+  }
+}
