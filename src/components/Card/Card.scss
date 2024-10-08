@@ -10,7 +10,7 @@
   // 诸如 shadow-gray-200 这样的 util 通过变量覆盖上述颜色
   // 但是，如果使用 extend，则被 extend 的变量反而会被覆盖（优先级更低）
   // 所以，不要使用 extend，全部使用 mixin / include
-  @include shadow-front;
+  @include shadow-on-back;
 
   // 在一段文字中插入信息的 card 组件
   &--in-content {
@@ -33,11 +33,11 @@
   &--clickable {
     @apply cursor-pointer transition-all;
     &:hover {
-      @include hover-front;
+      @include bg-front-hover;
     }
     &:active {
       @apply shadow-none;
-      @include active-front;
+      @include bg-front-active;
       transform: scale(0.98);
     }
   }

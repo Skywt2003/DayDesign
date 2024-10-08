@@ -14,35 +14,41 @@
   @apply text-gray-400 dark:text-neutral-600;
 }
 
+// 背景色
 @mixin bg-back {
   @apply bg-gray-100 dark:bg-neutral-900;
 }
 
+// 前景色
 @mixin bg-front {
   @apply bg-white dark:bg-neutral-800;
 }
 
-// bg-front 为前景，bg-back 为后景，显示出的 shadow
-@mixin shadow-front {
-  @apply shadow-gray-200 dark:shadow-neutral-900;
-}
-
-// 在 bg-back 上显示出的 border
-@mixin border-back {
-  @apply border-gray-200 dark:border-neutral-800;
-}
-
-// 在 bg-front 上显示出的 border
-@mixin border-front {
-  @apply border-gray-200 dark:border-neutral-700;
-}
-
-@mixin hover-front {
+@mixin bg-front-hover {
   @apply bg-gray-200 dark:bg-neutral-700;
 }
 
-@mixin active-front {
-  @apply bg-gray-300 dark:bg-neutral-950;
+@mixin bg-front-active {
+  @apply bg-gray-300 dark:bg-neutral-900;
+}
+
+// 在背景上显示出的 shadow
+@mixin shadow-on-back {
+  @apply shadow-gray-200 dark:shadow-neutral-900;
+}
+
+// 在背景上显示的 border
+@mixin border-on-back {
+  @apply border-gray-200 dark:border-neutral-800;
+}
+
+// 在前景上显示的 border
+@mixin border-on-front {
+  @apply border-gray-300 dark:border-neutral-700;
+}
+
+@mixin border-hover {
+  @apply border-gray-300 dark:border-neutral-700;
 }
 
 @mixin font-kai {

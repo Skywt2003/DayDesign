@@ -5,10 +5,23 @@
   @include bg-back;
 
   @apply border outline-0;
-  @include border-back;
+  @include border-on-back;
 
   @apply shadow-inner;
-  @include shadow-front;
+  @include shadow-on-back;
 
-  @include text-primary;
+  @include text-secondary;
+
+  &::placeholder {
+    @apply transition-all;
+    @include text-tertiary;
+  }
+  &:hover,
+  &:focus {
+    @include text-primary;
+    @include border-hover;
+    &::placeholder {
+      @include text-secondary;
+    }
+  }
 }

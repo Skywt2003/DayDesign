@@ -3,11 +3,11 @@
 .tabs {
   @apply flex w-full transition-all;
   @apply border rounded-xl;
-  @include border-back;
+  @include border-on-back;
   @apply shadow-inner;
-  @include shadow-front;
+  @include shadow-on-back;
   &:hover {
-    @include hover-front;
+    @include border-hover;
   }
   &__tab {
     @apply flex-1 text-center cursor-pointer;
@@ -15,7 +15,7 @@
     &--active {
       @include bg-front;
       @apply shadow-md;
-      @include shadow-front;
+      @include shadow-on-back;
       &:hover {
         @include bg-front;
         @apply cursor-default;

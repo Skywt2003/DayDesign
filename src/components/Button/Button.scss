@@ -5,21 +5,28 @@
   @include bg-front;
 
   @apply shadow-md;
-  @include shadow-front;
+  @include shadow-on-back;
+
+  @apply border;
+  @include border-on-back;
 
   &:hover {
-    @include hover-front;
+    @include bg-front-hover;
     @apply shadow-none;
   }
   &:active {
     @apply shadow-none;
-    @include active-front;
+    @include bg-front-active;
     transform: scale(0.98);
   }
   &:disabled {
     @apply shadow-none border;
-    @include border-back;
+    @include border-on-back;
     @include bg-back; // 待修改
     @include text-tertiary;
+  }
+  &--flat {
+    @apply shadow-none;
+    @include border-on-front;
   }
 }
