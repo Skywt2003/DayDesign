@@ -16,6 +16,7 @@
   "author": "SkyWT",
   "license": "ISC",
   "devDependencies": {
+    "@remixicon/react": "^4.2.0",
     "@rollup/plugin-commonjs": "^28.0.0",
     "@rollup/plugin-node-resolve": "^15.3.0",
     "@rollup/plugin-typescript": "^12.1.0",
