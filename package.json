@@ -1,9 +1,9 @@
 {
   "name": "daydesign",
   "version": "1.0.0",
-  "description": "",
+  "description": "A simple and elegant component library.",
   "type": "module",
-  "main": "dist/cjs/index.js",
+  "main": "dist/index.js",
   "module": "dist/index.js",
   "style": "dist/styles.css",
   "types": "dist/index.d.ts",
@@ -15,7 +15,7 @@
     "watch": "rollup -c -w"
   },
   "author": "SkyWT",
-  "license": "ISC",
+  "license": "GPL-3.0-only",
   "devDependencies": {
     "@remixicon/react": "^4.2.0",
     "@rollup/plugin-commonjs": "^28.0.0",
