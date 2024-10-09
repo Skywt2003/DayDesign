@@ -7,14 +7,17 @@ export interface TabsProps extends React.HTMLAttributes<HTMLElement> {
   onSelectedChange?: (index: number) => void;
 }
 
-const Tabs = (props: TabsProps) => {
-  const [selectedTab, setSelectedTab] = useState(props.defaultSelected ?? 0);
+const Tabs = ({
+  tabs,
+  defaultSelected,
+  onSelectedChange,
+  className,
+  ...restProps
+}: TabsProps) => {
+  const [selectedTab, setSelectedTab] = useState(defaultSelected ?? 0);
   return (
-    <div
-      {...props}
-      className={props.className ? "tabs " + props.className : "tabs"}
-    >
-      {props.tabs.map((tab, index) => (
+    <div {...restProps} className={className ? "tabs " + className : "tabs"}>
+      {tabs.map((tab, index) => (
         <div
           key={index}
           className={
@@ -22,7 +25,7 @@ const Tabs = (props: TabsProps) => {
           }
           onClick={() => {
             setSelectedTab(index);
-            props.onSelectedChange?.(index);
+            onSelectedChange?.(index);
           }}
         >
           {tab}

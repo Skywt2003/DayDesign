@@ -22,9 +22,6 @@
     @apply flex flex-col justify-center relative;
     @apply rounded-2xl;
   }
-  &--align-center {
-    @apply items-center;
-  }
   &--with-image {
     @apply bg-center bg-cover bg-no-repeat bg-blend-overlay text-white;
     background-color: rgb(100, 100, 100);
@@ -34,6 +31,7 @@
     @apply cursor-pointer transition-all;
     &:hover {
       @include bg-front-hover;
+      @apply shadow-none;
     }
     &:active {
       @apply shadow-none;

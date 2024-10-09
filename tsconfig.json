@@ -8,9 +8,9 @@
     "jsx": "react",
     "module": "ESNext",
     "declaration": true,
-    "declarationDir": "dist/esm/types",
+    "declarationDir": "dist/types",
     "sourceMap": true,
-    "outDir": "dist/esm",
+    "outDir": "dist",
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
     "emitDeclarationOnly": true,
@@ -20,5 +20,6 @@
       "@styles/*": ["src/styles/*"]
     }
   },
-  "include": ["src/**/*"]
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist"]
 }

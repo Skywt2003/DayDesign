@@ -8,22 +8,25 @@ export interface RateProps extends React.HTMLAttributes<HTMLElement> {
   onRate: (rate: number) => void;
 }
 
-const Rate = (props: RateProps) => {
+const Rate = ({
+  value,
+  changeable,
+  onRate,
+  className,
+  ...restProps
+}: RateProps) => {
   return (
-    <div
-      {...props}
-      className={props.className ? "rate " + props.className : "rate"}
-    >
+    <div {...restProps} className={"rate" + (className ? " " + className : "")}>
       {[1, 2, 3, 4, 5].map((i) => (
         <Icon
-          name={i <= props.value ? "RiStarFill" : "RiStarLine"}
+          name={i <= value ? "RiStarFill" : "RiStarLine"}
           key={i}
           className={
             "rate__star" +
-            (props.changeable ? " cursor-pointer" : "") +
-            (i <= props.value ? " rate__star--active" : "")
+            (changeable ? " cursor-pointer" : "") +
+            (i <= value ? " rate__star--active" : "")
           }
-          onClick={() => props.changeable && props.onRate(i)}
+          onClick={() => changeable && onRate(i)}
         />
       ))}
     </div>

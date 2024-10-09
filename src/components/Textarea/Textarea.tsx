@@ -4,10 +4,10 @@ import "./Textarea.scss";
 export interface TextareaProps
   extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {}
 
-const Textarea = (props: TextareaProps) => (
+const Textarea = ({ className, ...restProps }: TextareaProps) => (
   <textarea
-    {...props}
-    className={props.className ? "textarea " + props.className : "textarea"}
+    {...restProps}
+    className={className ? "textarea " + className : "textarea"}
   />
 );
 

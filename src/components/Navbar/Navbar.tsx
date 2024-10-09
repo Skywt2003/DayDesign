@@ -1,9 +1,16 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./Navbar.scss";
 
-export interface NavbarProps extends React.HTMLAttributes<HTMLElement> {}
+export interface NavbarProps extends React.HTMLAttributes<HTMLElement> {
+  defaultHidden?: boolean;
+}
 
-const Navbar = (props: NavbarProps) => {
+const Navbar = ({
+  defaultHidden = false,
+  className,
+  children,
+  ...restProps
+}: NavbarProps) => {
   const [isSticked, setIsSticked] = useState(false);
   const componentRef = useRef<HTMLElement | null>(null);
 
@@ -23,11 +30,16 @@ const Navbar = (props: NavbarProps) => {
 
   return (
     <nav
-      className={"navbar" + (isSticked ? " navbar--sticked" : "")}
+      {...restProps}
+      className={
+        "navbar" +
+        (defaultHidden && !isSticked ? " navbar--hidden" : "") +
+        (isSticked ? " navbar--sticked" : "") +
+        (className ? " " + className : "")
+      }
       ref={componentRef}
-      {...props}
     >
-      {props.children}
+      {children}
     </nav>
   );
 };

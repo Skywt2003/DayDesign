@@ -10,11 +10,35 @@
 
 所以，我将 Daydreamer 前端里的组件做成了组件库，叫做 DayDesign。
 
+## Usage
+
+```bash
+npm i daydesign
+```
+
+由于有大量 mixins，需要配合 Sass 使用。在 Sass 中 use `daydesign/dist/global.scss` 即可使用所有 mixins。
+
 ## Layout
 
 - container
   - container--wide
 - content
+
+## Colors
+
+以下均为 Sass 的 mixins，可以直接 include。
+
+- text-primary：一级文字颜色，最醒目
+- text-secondary：二级文字颜色
+- text-tertiary：三级文字颜色，最不醒目
+- bg-back：全局背景色
+- bg-front：前景色（卡片、按钮等）
+- bg-front-hover：前景 hover 时的颜色
+- bg-front-active：前景 active（按钮按下）的颜色
+- shadow-on-back：前景物体在背景上显示出的阴影颜色
+- border-on-back：前景物体在背景上应添加的边框颜色
+- border-on-front：前景物体上的物体应添加的边框颜色
+- border-hover：物体 hover 时的边框颜色
 
 ## Components
 

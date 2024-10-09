@@ -6,16 +6,16 @@ export interface ButtonProps
   flat?: boolean;
 }
 
-const Button = (props: ButtonProps) => (
+const Button = ({ flat, className, children, ...restProps }: ButtonProps) => (
   <button
-    {...props}
+    {...restProps}
     className={
       "button" +
-      (props.className ? " " + props.className : "") +
-      (props.flat ? " button--flat" : "")
+      (className ? " " + className : "") +
+      (flat ? " button--flat" : "")
     }
   >
-    {props.children}
+    {children}
   </button>
 );
 

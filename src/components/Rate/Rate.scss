@@ -1,7 +1,7 @@
 .rate {
-  @apply inline-flex p-2;
+  @apply inline-flex;
   &__star {
-    @apply px-1 w-6 h-6;
+    @apply px-1 w-7 h-7;
     &--active {
       @apply text-yellow-500;
     }

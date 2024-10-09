@@ -1,8 +1,9 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+// 防止重复定义导致的优先级问题
+// @tailwind base;
+// @tailwind components;
+// @tailwind utilities;
 
-@import "../styles//mixins.scss";
+@import "./mixins.scss";
 
 .text-primary {
   @include text-primary;
