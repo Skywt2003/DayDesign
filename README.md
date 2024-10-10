@@ -1,22 +1,31 @@
 # DayDesign
 
-极简的组件库。
+一个简洁优雅的 React 组件库。
 
 ## Why
 
-大多数用于 Web UI 的组件库，都追求简洁高效的风格。这对于一般的 Web App 来说很好，但不是我的博客想要传达的感受。
-因此，在写我自己的博客前端 Daydreamer 的时候，我选择不使用现有的组件库，用 Tailwind 自己设计所有组件。
-而这也带来了样式耦合、难复用等问题。
+大多数流行的 Web 组件库，都追求**高效**、**明快**的风格。这对于一般的 Web App 来说很好，但不是我的网站想要传达的感受。
 
-所以，我将 Daydreamer 前端里的组件做成了组件库，叫做 DayDesign。
+因此，我用 Tailwind 创造了自己的组件库，名为 DayDesign，用于我的网站 [skywt.cn](https://skywt.cn)。
 
 ## Usage
 
+建议配合**思源宋体**使用。
+
 ```bash
-npm i daydesign
+npm i daydesign remixicon
 ```
 
-由于有大量 mixins，需要配合 Sass 使用。在 Sass 中 use `daydesign/dist/global.scss` 即可使用所有 mixins。
+```js
+import "remixicon/fonts/remixicon.css";
+import "daydesign/dist/styles.css";
+```
+
+如果需要使用 mixins，可以使用 DayDesign 提供的 mixins.scss：
+
+```scss
+@use "daydesign/dist/mixins" as *;
+```
 
 ## Layout
 
@@ -26,7 +35,7 @@ npm i daydesign
 
 ## Colors
 
-以下均为 Sass 的 mixins，可以直接 include。
+以下均为 Sass 的 mixins，可以 include。
 
 - text-primary：一级文字颜色，最醒目
 - text-secondary：二级文字颜色
